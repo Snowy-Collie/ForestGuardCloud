@@ -64,8 +64,8 @@ To allow seamless deployment on low-spec edge/cloud VMs (e.g., 2GB RAM instances
 │  [Sensors: TVOC, eCO2, NH3, H2S, Temp, Hum] ──► [EG800Q 4G Module]     │
 │  [OV2640 / SPI Camera Chunked Photo Stream]                            │
 └──────────────────────────────────┬─────────────────────────────────────┘
-│ Raw TCP Binary (ZProtocol Frames)
-▼
+                                   │ Raw TCP Binary (ZProtocol Frames)
+                                   ▼
 ┌────────────────────────────────────────────────────────────────────────┐
 │                  2. INGESTION SERVICE (Port 20000)                     │
 │  ┌──────────────────────┐  ┌────────────────────────────────────────┐  │
