@@ -1,0 +1,5 @@
+# ForestGuard AI Monorepo Requirements
+# To install all dependencies, run: pip install -r requirements.txt
+
+-r requirements/base.txt
+-r requirements/ai.txt
