@@ -1,25 +1,3 @@
----
-id: forest-guard-ai
-order: 1
-date: "2026-03-15"
-category: "AI & IoT • Science Fair"
-title_en: "ForestGuard AI: Multimodal Dual-Layer Early-Stage Wildfire Detection System"
-title_zh-CN: "ForestGuard AI：多模态双层林火超早期预警系统"
-title_zh-TW: "ForestGuard AI：多模態雙層森林火災超早期預警系統"
-title_ja: "ForestGuard AI：マルチモーダル2段階早期山火事検知システム"
-subtitle_en: "Pre-ignition chemical detection & vision confirmation IoT monorepo architecture"
-subtitle_zh-CN: "基于起火前化学分解监测与视觉二次验证的高性能物联网架构"
-subtitle_zh-TW: "基於燃燒前化學分解監測與視覺二次驗證的高性能物聯網架構"
-subtitle_ja: "発火前の化学変化検知と画像検証を組み合わせた高性能IoTアーキテクチャ"
-summary_en: "A resource-decoupled IoT wildfire early predictor designed to capture gaseous chemical anomalies at the pre-ignition stage before active flames emerge."
-summary_zh-CN: "一款面向超早期林火监测的解耦式物联网预警系统，在明火与肉眼可见浓烟生成前的“化学热解阶段”即完成精准识别。"
-summary_zh-TW: "一款針對超早期森林火災的解耦式物聯網預警系統，在明火與可見濃煙生成前的「化學熱解階段」即可實現即時捕捉與警報。"
-summary_ja: "明火や白煙が発生する前の「発火前化学熱分解段階」でガス濃度の異常を捉える、省リソース・疎結合型のIoT早期山火事検知システム。"
-link: "https://fg.scalexch.net"
-image_type: svg
-image_value: tree
----
-
 <!-- lang:en -->
 ## Technical Architecture & Monorepo Overview
 *A high-performance, resource-decoupled Internet of Things (IoT) wildfire predictor engineered to capture threats at the **pre-ignition chemical stage** before active flames emerge.*
