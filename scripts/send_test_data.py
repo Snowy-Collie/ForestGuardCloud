@@ -193,7 +193,7 @@ def main():
         config["smoke"] = args.smoke
 
     print("=" * 70)
-    print("🌲 ForestGuard AI - End-to-End Test Telemetry Dispatcher")
+    print("[#] ForestGuard AI - End-to-End Test Telemetry Dispatcher")
     print("=" * 70)
     print(f"Target Server:    {args.host}")
     print(f"Ingestion Port:   {args.tcp_port} (TCP / ZProtocol)")
@@ -234,10 +234,10 @@ def main():
     rec = query_dashboard_api(args.host, args.web_port, args.imei)
 
     print("\n" + "=" * 70)
-    print("🔍 Verification & Result on Live Map Dashboard")
+    print("[*] Verification & Result on Live Map Dashboard")
     print("=" * 70)
     if rec:
-        print(f"[✓] Record found in database!")
+        print("[+] Record found in database!")
         print(f"    - Database Record ID: {rec.get('id')}")
         print(f"    - Device IMEI:        {rec.get('device_imei')}")
         print(f"    - Received At:        {rec.get('received_at')}")
@@ -245,7 +245,7 @@ def main():
         print(f"    - AI-1 Score:         {rec.get('ai1')} (XGBoost Environmental Risk)")
         print(f"    - AI-2 Score:         {rec.get('ai2')} (CNN Visual Verification)")
         print(f"    - Final Risk Level:   {rec.get('final_risk_level')} (Badge Color: {rec.get('final_risk_level', 'green').upper()})")
-        print(f"\n[✓] Map URL: http://{args.host}:{args.web_port}/")
+        print(f"\n[+] Map URL: http://{args.host}:{args.web_port}/")
         print("    Open the URL in your browser to view your test marker live on the map!")
     else:
         print("[-] Notice: Record not immediately returned by /api/data top 100 or query timed out.")
