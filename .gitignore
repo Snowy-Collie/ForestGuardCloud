@@ -33,6 +33,10 @@ ENV/
 # Environment variables & secrets
 .env
 config/.env
+serverkey/
+*.key
+*.pem
+my_remote_key*
 
 # Local storage runtime data (keep directory structure via .gitkeep)
 data_storage/images/*
