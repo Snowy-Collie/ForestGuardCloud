@@ -152,7 +152,7 @@ def main():
     parser.add_argument("--eco2", type=int, default=None, help="eCO2 in ppm")
     parser.add_argument("--tvoc", type=int, default=None, help="TVOC in ppb")
     parser.add_argument("--temp", type=float, default=None, help="Temperature in °C")
-    parser.add_argument("--hum", type=float, default=None, help="Humidity in %")
+    parser.add_argument("--hum", type=float, default=None, help="Humidity in percent")
     parser.add_argument("--smoke", type=float, default=None, help="Smoke sensor reading (mV/V)")
     parser.add_argument("--lat", type=float, default=49.2827, help="Latitude coordinate (default: 49.2827 Vancouver)")
     parser.add_argument("--lng", type=float, default=-123.1207, help="Longitude coordinate (default: -123.1207 Vancouver)")
