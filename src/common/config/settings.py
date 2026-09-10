@@ -111,28 +111,38 @@ class Settings:
                 config_data = yaml.safe_load(f) or {}
                 
         # Override with environment variables
-        config_data = cls._apply_env_overrides(config_data)
+        config_data = cls._apply_env_overrides(config_data, config_filename)
         
         return cls._from_dict(config_data)
 
     @classmethod
-    def _apply_env_overrides(cls, config_data: Dict[str, Any]) -> Dict[str, Any]:
+    def _apply_env_overrides(cls, config_data: Dict[str, Any], config_filename: str = "") -> Dict[str, Any]:
         """Apply environment variables to override yaml settings"""
         # Server
         if 'server' not in config_data:
             config_data['server'] = {}
-        if 'TCP_PORT' in os.environ:
-            config_data['server']['port'] = int(os.environ['TCP_PORT'])
-        if 'TCP_HOST' in os.environ:
-            config_data['server']['host'] = os.environ['TCP_HOST']
-        if 'WEB_PORT' in os.environ:
-            config_data['server']['port'] = int(os.environ['WEB_PORT'])
-        if 'WEB_HOST' in os.environ:
-            config_data['server']['host'] = os.environ['WEB_HOST']
-        if 'AI_PORT' in os.environ:
-            config_data['server']['port'] = int(os.environ['AI_PORT'])
-        if 'AI_HOST' in os.environ:
-            config_data['server']['host'] = os.environ['AI_HOST']
+            
+        fname = config_filename.lower()
+        if 'ingestion' in fname:
+            if 'TCP_PORT' in os.environ:
+                config_data['server']['port'] = int(os.environ['TCP_PORT'])
+            if 'TCP_HOST' in os.environ:
+                config_data['server']['host'] = os.environ['TCP_HOST']
+        elif 'web' in fname:
+            if 'WEB_PORT' in os.environ:
+                config_data['server']['port'] = int(os.environ['WEB_PORT'])
+            if 'WEB_HOST' in os.environ:
+                config_data['server']['host'] = os.environ['WEB_HOST']
+        elif 'ai' in fname:
+            if 'AI_PORT' in os.environ:
+                config_data['server']['port'] = int(os.environ['AI_PORT'])
+            if 'AI_HOST' in os.environ:
+                config_data['server']['host'] = os.environ['AI_HOST']
+        else:
+            if 'PORT' in os.environ:
+                config_data['server']['port'] = int(os.environ['PORT'])
+            if 'HOST' in os.environ:
+                config_data['server']['host'] = os.environ['HOST']
 
         # Database
         if 'database' not in config_data:

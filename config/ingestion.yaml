@@ -20,5 +20,5 @@ storage:
   data_storage_dir: "./data_storage"
 
 ai:
-  worker_url: "http://localhost:8001/process"
+  worker_url: "http://localhost:8002/process"
   callback_url: "http://localhost:8000/api/ai_callback"

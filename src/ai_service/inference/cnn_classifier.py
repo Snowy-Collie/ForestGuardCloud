@@ -6,7 +6,10 @@ Loads Keras MobileNetV2 model and performs image classification for fire detecti
 import os
 import numpy as np
 from PIL import Image
-import tensorflow as tf
+try:
+    import tensorflow as tf
+except ImportError:
+    tf = None
 import logging
 from typing import Optional
 
@@ -32,6 +35,11 @@ class CNNClassifier:
             
         self.model_path = model_path
         
+        if tf is None:
+            logger.warning("TensorFlow not installed. CNN classifier disabled.")
+            self.model = None
+            return
+
         logger.info(f"Loading Keras CNN model from: {self.model_path}")
         if not os.path.exists(self.model_path):
             logger.warning(f"CNN model weights not found at {self.model_path}. Falling back to pre-trained MobileNetV2 model.")
@@ -95,6 +103,10 @@ class CNNClassifier:
         Returns:
             The fire risk probability (float score between 0 and 1).
         """
+        if self.model is None or tf is None:
+            logger.warning("CNN model not available. Returning 0.0.")
+            return 0.0
+
         img_array = self.preprocess_image(image_path)
         
         # Run prediction
