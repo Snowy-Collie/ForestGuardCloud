@@ -61,7 +61,7 @@ def build_sensor_payload(
     flags = 0x03
 
     payload = struct.pack(
-        ">HHHHHhh iihBB I HHHHH B",
+        "<HHHHHhHiiHBBIHHHHHB",
         eco2,
         ech2o,
         tvoc,
